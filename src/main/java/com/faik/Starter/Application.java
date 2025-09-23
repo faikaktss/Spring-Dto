@@ -6,17 +6,18 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import jakarta.persistence.Entity;
-
-@EntityScan(basePackages = {"com.faik"})
-@ComponentScan(basePackages = {"com.faik"})
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = {"com.faik"})
+@ComponentScan(basePackages = {
+    "com.faik.Controller", 
+    "com.faik.Services", 
+    "com.faik.Repository",
+    "com.faik.Starter"
+})
+@EntityScan(basePackages = {"com.faik.Entites"})
+@EnableJpaRepositories(basePackages = {"com.faik.Repository"})
 public class Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 }
- 

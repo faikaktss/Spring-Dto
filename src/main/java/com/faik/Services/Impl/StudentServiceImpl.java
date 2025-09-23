@@ -17,14 +17,9 @@ import com.faik.dto.DtoStudentIU;
 @Service
 public class StudentServiceImpl implements IStudentService{
 
-    private final Impl.StudentControllerImpl studentControllerImpl;
-
 	@Autowired
 	public StudentRepository studentRepository;
 
-    StudentServiceImpl(Impl.StudentControllerImpl studentControllerImpl) {
-        this.studentControllerImpl = studentControllerImpl;
-    }
 	
 	@Override
 	public DtoStudent saveStudent(DtoStudentIU dtoStudentIU) {

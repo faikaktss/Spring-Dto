@@ -19,6 +19,8 @@ import com.faik.Services.IStudentService;
 import com.faik.dto.DtoStudent;
 import com.faik.dto.DtoStudentIU;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/rest/api/student")
 public class StudentControllerImpl implements IStudentController{
@@ -31,7 +33,7 @@ public class StudentControllerImpl implements IStudentController{
 
 	@PostMapping(path = "/save")
 	@Override
-	public DtoStudent saveStudent(@RequestBody DtoStudentIU dtoStudentIU) {
+	public DtoStudent saveStudent(@RequestBody @Valid DtoStudentIU dtoStudentIU) {
 		return studentService.saveStudent(dtoStudentIU);
 	}
 
